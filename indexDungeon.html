@@ -8,6 +8,12 @@
 </head>
 
 <body style="background-color: #a5988d;">
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="#" class="active">Treasure Hunt</a>
+    <a href="carbon_counter.html">Carbon Counter</a>
+  </div>
+
 
   <h1 class="name">Treasure Hunt!</h1>
   <a onclick="location.href = 'dungeon.html'" class="button1" style="background-color:#f14e4e">Start Game</a>
@@ -17,7 +23,7 @@
     sessionStorage.setItem("inventory", JSON.stringify([
       { name: 'Fist', img: "Images/Items/grass.png", stock: 1, description: "Attack: 5\nDefense: 0", attack: 5, defense: 0 }
     ]));
-    
+
     sessionStorage.setItem('currentRoomX', Number(2));
     sessionStorage.setItem('currentRoomY', Number(2));
     sessionStorage.setItem("equip", "None");
