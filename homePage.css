@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: black;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-image: url("Images/mountain-landscape-clouds-2018.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+h1 {
+  font-family: "Papyrus";
+  border: 4px double #6f2a2a;
+  color: #455c3d;
+  padding: 8px;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.side{
+  flex: 50%;
+  padding: 20px;
+}
+
+.main{
+  flex: 50%;
+  padding: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
