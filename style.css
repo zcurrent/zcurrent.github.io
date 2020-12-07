@@ -1,0 +1,51 @@
+#dungeon {
+	width: 800px;
+	height: 500px;
+	border: 1px solid black;
+	background: #00008B;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+a.button1{
+  display: block;
+  padding: 0.5em 1.8em;
+  margin: 0 0.1em 0.1em 0;
+  border: .2em solid rgba(255,255,255,0);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 1000;
+  color: #FFFFFF;
+  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+  text-align: center;
+  transition: all 0.2s;
+  align-self: center;
+}
+a.button1:hover{
+  border-color: rgba(0, 0, 255, 1);
+  cursor: pointer;
+}
+@media all and (max-width:300em){
+  a.button1{
+    display: block;
+    margin: .2em auto;
+  }
+}
+.btn-group a.button1 {
+  padding: 10px 100px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  
+	margin-left: 10%;
+  
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+    <title>Settings</title>
+
+  </head>
+  <body style="background-color: #a5988d;"">
+
+    <script>
+      function goBack(){
+        sessionStorage.setItem("name", document.getElementById("name").value);
+        window.location.href = 'indexDungeon.html'
+      }
+    </script>
+
+
+    <a onclick="location.href = 'index.html'" class="button1" style="background-color:#f14e4e">Main Menu</a></br>
+
+    <form>
+
+      <fieldset>
+        <legend>Information</legend>
+        <div>
+          <label for="ex21">Name:</label>
+          <input type="text" id="name" name="ex21" value="Player">
+        </div>
+        <div>
+          <label for="ex22">Title:</label>
+          <input type="text" name="ex22" value="Master Treasure Hunter">
+        </div>
+      </fieldset>
+    </form>
+
+    <a onclick="goBack()" class="button1" style="background-color:#f14e4e">Save and return Main Menu</a></br>
+
+    <script>
+      if(sessionStorage.getItem("name") != null){
+        var nameField = document.getElementById("name");
+        nameField.value = sessionStorage.getItem("name");
+      }
+    </script>
+
+  </body>
+</html>

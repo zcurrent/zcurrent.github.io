@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main.css">
+  <title>Treasure Hunt</title>
+</head>
+
+<body style="background-color: #a5988d;">
+
+  <h1 class="name">Treasure Hunt!</h1>
+  <a onclick="location.href = 'dungeon.html'" class="button1" style="background-color:#f14e4e">Start Game</a>
+  <a onclick="location.href = 'leaderboard.html'" class="button1" style="background-color:#f14e4e">Local Leaderboard</a>
+  <a onclick="location.href = 'settings.html'" class="button1" style="background-color:#f14e4e">Settings</a>
+  <script>
+    sessionStorage.setItem("inventory", JSON.stringify([
+      { name: 'Fist', img: "Images/Items/grass.png", stock: 1, description: "Attack: 5\nDefense: 0", attack: 5, defense: 0 }
+    ]));
+    
+    sessionStorage.setItem('currentRoomX', Number(2));
+    sessionStorage.setItem('currentRoomY', Number(2));
+    sessionStorage.setItem("equip", "None");
+    sessionStorage.setItem("attack", 0);
+    sessionStorage.setItem("defense", 0);
+    sessionStorage.setItem("health", 300);
+    sessionStorage.setItem("found", JSON.stringify([0]));
+    sessionStorage.setItem("time", 0);
+    sessionStorage.setItem("score", 0);
+    if(sessionStorage.getItem("name") == null){
+      sessionStorage.setItem("name", "Player");
+    }
+    if(localStorage.getItem("leaderboard") == null){
+      localStorage.setItem("leaderboard", JSON.stringify([0]));
+    }
+    console.log(JSON.parse(localStorage.getItem("leaderboard")));
+  </script>
+</body>
+
+</html>

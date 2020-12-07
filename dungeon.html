@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport">
+	<title>Character Movement</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body style="background-color: #a5988d;">
+	<div>
+		<canvas id="dungeon"></canvas>
+	</div>
+
+	<div>
+		<div class="btn-group">
+			<a onclick="window.location.href = 'inventory.html'" class="button1"
+				style="background-color:#f14e4e">Inventory</a>
+			<a onclick="window.location.href = 'map.html'" class="button1" style="background-color:#f14e4e">Map</a>
+			<a onclick="window.location.href = 'indexDungeon.html'" class="button1" style="background-color:#f14e4e">Quit</a>
+		</div>
+		<p id="equip" style="color: #FDD017; 
+  font-family: 'Roboto',sans-serif;">Equipped Item: None</p>
+		<p id="attack" style="color: #FDD017; 
+  font-family: 'Roboto',sans-serif;">Attack: 10</p>
+		<p id="defense" style="color: #FDD017; 
+  font-family: 'Roboto',sans-serif;">Defense: 10</p>
+		<p id="health" style="color: #FDD017; 
+  font-family: 'Roboto',sans-serif;">Health: 200</p>
+		<p id="timer" style="color: #FDD017; 
+  font-family: 'Roboto',sans-serif;">Time: 0</p>
+		<p id="score" style="color: #FDD017; 
+  font-family: 'Roboto',sans-serif;">Score: 0</p>
+	</div>
+
+	<script type="text/javascript" src="dungeon.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport">
+    <title>Map</title>
+    <script src="./map.js">
+    </script>
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+    <a onclick="saveFlags()" class=" button1" style="background-color:#f14e4e">Dungeon</a>
+    <br>
+    <div class="grid-container" id="gridMap"> </div>
+    <script>
+
+        function saveFlags() {
+            console.log(window.sessionStorage);
+            if (typeof window.sessionStorage === "undefined") { return; }
+            var inputs = document.getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                window.sessionStorage.setItem(inputs[i].name, inputs[i].checked);
+            }
+            window.location.href = 'dungeon.html';
+            return true;
+        }
+
+        function loadFlags() {
+            console.log(window.sessionStorage);
+            if (typeof window.sessionStorage === "undefined") { return; }
+            var inputs = document.getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                var c = window.sessionStorage.getItem(inputs[i].name);
+                if (c == "true")
+                    inputs[i].checked = c;
+            }
+        }
+    </script>
+</body>
+
+</html>

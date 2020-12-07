@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <a onclick="goBack()" class="button1" style="background-color:#f14e4e">Back to Dungeon</a>
+    <br>
+    <br>
+    <div class="grid" id="grid">
+    </div>
+    <script>
+        function buildGrid(rows, columns) {
+            var index = 1;
+            while (index <= rows) {
+                var IDindex = "card" + index;
+                const container = document.getElementById('grid');
+                var rowIndex = "row" + index;
+                const row = `
+                <div class="row" id=${rowIndex}>
+                </div>
+                `;
+
+                container.innerHTML += row;
+                var colIndex = 1;
+                while (colIndex <= columns) {
+                    const rowContainer = document.getElementById(rowIndex);
+                    var colIDIndex = "col" + colIndex;
+                    var cardIndex = "card" + ((index - 1) * rows + colIndex);
+                    const col = `
+                    <div class="column" id=${colIDIndex}>
+                        <div class="card" line-height: 1 id=${cardIndex}>
+                            <img src="Images/Items/back.jpg" alt="Avatar" style="width:100%">
+                            <h3 id="card${index * colIndex}name">Empty</h3>
+                            <p>Stock: 0<br>Attack: 0<br>Defense: 0</p>
+                            <div class="btn-group">
+                            <a class="button1" style="background-color:#f14e4e">Sell</a>
+                            <a class="button1" style="background-color:#f14e4e">Equip</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                    rowContainer.innerHTML += col;
+                    colIndex++;
+                }
+                index++;
+            }
+
+        };
+        buildGrid(2, 10);
+    </script>
+
+
+</body>
+<script src="inventory.js"> </script>
+
+
+
+</html>

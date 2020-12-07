@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+    <title>Settings</title>
+
+    <style>
+        h1 {
+            color:  #f14e4e;
+            font-size: 75px;
+        }
+        table, th, td {
+            border: 3px solid #f14e4e;
+            border-collapse: collapse;
+        }
+        th td {
+            padding: 25px;
+        }
+    </style>
+    
+  </head>
+  <body style="background-color: #a5988d;">
+    <h1 align="center">Local leaderboard</h1>
+
+    <div>
+        <table id="leaderboard" style="width:75%" align="center">
+            <td align="center">
+                Name
+                <th>Score</th>
+            </td>
+        </table>
+    </div>
+    
+
+    <div>
+        <br>
+        <br>
+        <a onclick="location.href = 'indexDungeon.html'" class="button1" style="background-color:#f14e4e">Main Menu</a></br>
+    </div>
+    
+
+    <script>
+        var leaderboard = JSON.parse(localStorage.getItem("leaderboard"));
+        var index = 1;
+
+        for(let i = 0; i < leaderboard.length; i++){
+            let maxIndex = i;
+            for(let j = i + 1; j < leaderboard.length; j++){
+                if(leaderboard[j].score > leaderboard[i].score){
+                    maxIndex = j;
+                }
+            }
+
+            let temp = leaderboard[i];
+            leaderboard[i] = leaderboard[maxIndex];
+            leaderboard[maxIndex] = temp;
+        }
+
+        for(let i = 0; i < leaderboard.length; i++){
+            if(leaderboard[i].name != null){
+                var table = document.getElementById("leaderboard");
+                var row = table.insertRow(index);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                cell1.innerHTML = leaderboard[i].name;
+                cell2.innerHTML = leaderboard[i].score;
+                console.log(leaderboard[i]);
+                index++;
+            }
+        }
+    </script>
+  </body>
+</html>
